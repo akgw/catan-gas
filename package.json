@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@google/clasp": "^1.4.0",
+    "css-loader": "^0.28.11",
+    "ts-loader": "^4.4.2",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2",
+    "vue-loader": "^15.2.4",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "scripts": {
+    "pull": "clasp pull",
+    "push": "clasp push",
+    "tslint:fix": "tslint --fix --project tsconfig.json './src/**/*.ts'",
+    "build": "webpack --mode development --config webpack.config.js && sh setScriptTag.sh",
+    "deploy": "yarn run build && yarn run push"
+  },
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vuex": "^3.0.1"
+  },
+  "license": "MIT"
+}
