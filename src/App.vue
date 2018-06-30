@@ -1,12 +1,13 @@
 <template>
   <div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
   export default {
     created() {
-      console.log("test");
+      this.$router.push('/');
     }
   }
 </script>
