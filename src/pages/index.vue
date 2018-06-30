@@ -1,31 +1,15 @@
 <template>
   <div>
-    <img :src=panelPath>
-    <span v-if="panelNameList.length > 0">
-      <button v-on:click="changePanelImage">次</button>
-    </span>
+    <panels-component></panels-component>
   </div>
 </template>
 
 <script lang="ts">
-  import {ImagesPath} from '../infrastructure/Images';
+  import Vue from 'vue';
+  import Panels from '../components/panels.vue';
 
-  export default {
-    methods: {
-      changePanelImage(){
-        if (this.panelNameList.length <= 0) {
-          return;
-        }
-        this.panelPath = ImagesPath.panel(this.panelNameList.pop());
-      }
-    },
-    data: () => {
-      return {
-        panelPath: "",
-        panelNameList: ["forest","desert", "field", "hill", "mountains", "pasture"],
-      }
-    }
-  }
+  Vue.component('panels-component', Panels);
+  export default {}
 </script>
 
 <style scoped>

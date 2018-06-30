@@ -22,7 +22,7 @@ module.exports = {
             options: {
               appendTsSuffixTo: [/\.vue$/],
             }
-          },
+          }
         ],
         exclude: '/node_modules/'
       },
@@ -30,6 +30,10 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         exclude: '/node_modules/'
+      },
+      {
+        test: /\.css$/,
+        loader:[ 'style-loader', 'css-loader' ]
       }
     ]
   },
