@@ -1,5 +1,6 @@
 import { MutationTree } from 'vuex';
 import { IRoadsState, ICell } from './modules/roads';
+import { IPanelsState } from './modules/panels';
 import { Roads } from '../domain/roads';
 import IGenerateResponse = Roads.IGenerateResponse;
 
@@ -12,4 +13,13 @@ export const roadsMutations: MutationTree<IRoadsState> = {
   setRoad(state: IRoadsState, value: IGenerateResponse): void {
     state.roads[value.position] = value.playerNumber;
   },
+};
+
+export const panelsMutations: MutationTree<IPanelsState> = {
+
+  setPanels(state: IPanelsState, panels: ICell): void {
+    console.log('sets', panels);
+    state.panels = panels;
+  },
+
 };

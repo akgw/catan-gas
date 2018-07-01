@@ -105,3 +105,11 @@ export const playerNumberToColor:{[key: number]: string} = {
   3: 'yellow',
   4: 'white',
 };
+
+export const panelNumList = {
+  forest: 4,
+  field: 4,
+  hill: 3,
+  mountains: 3,
+  pasture: 4,
+};

@@ -47,6 +47,15 @@ export namespace Gas {
     });
   };
 
+  export const writeRangeCell = (sheetName: string, fromX: number, toX: number, values: string[]) => {
+    return new Promise((resolve, reject) => {
+      google.script.run
+        .withSuccessHandler(resolve)
+        .withFailureHandler(reject)
+        .sendWriteRangeCell(sheetName, values, convertX(fromX), convertX(toX));
+    });
+  };
+
   /**
    * シートを初期化
    *

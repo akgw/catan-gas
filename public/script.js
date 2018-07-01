@@ -73,8 +73,3 @@ function sendClearSheet(sheetName) {
   const sheet = SpreadsheetApp.getActive().getSheetByName(sheetName);
   return sheet.clear();
 }
-
-function image() {
-  "13u_p9tBGNgv3ROFS9VotymiqLD_sb7lB"
-
-}

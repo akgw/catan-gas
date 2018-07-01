@@ -1,33 +1,29 @@
 <template>
   <div>
     <ul>
-      <li><panel-component panelName="forest"></panel-component></li>
-      <li><panel-component panelName="hill"></panel-component></li>
-      <li><panel-component panelName="desert"></panel-component></li>
+      <li v-for="name in panelsName.slice(0, 3)">
+        <panel-component :panelName=name></panel-component>
+      </li>
     </ul>
     <ul>
-      <li><panel-component panelName="forest"></panel-component></li>
-      <li><panel-component panelName="hill"></panel-component></li>
-      <li><panel-component panelName="desert"></panel-component></li>
-      <li><panel-component panelName="mountains"></panel-component></li>
+      <li v-for="name in panelsName.slice(3, 7)">
+        <panel-component :panelName=name></panel-component>
+      </li>
     </ul>
     <ul>
-      <li><panel-component panelName="forest"></panel-component></li>
-      <li><panel-component panelName="hill"></panel-component></li>
-      <li><panel-component panelName="desert"></panel-component></li>
-      <li><panel-component panelName="mountains"></panel-component></li>
-      <li><panel-component panelName="field"></panel-component></li>
+      <li v-for="name in panelsName.slice(7, 12)">
+        <panel-component :panelName=name></panel-component>
+      </li>
     </ul>
     <ul>
-      <li><panel-component panelName="forest"></panel-component></li>
-      <li><panel-component panelName="hill"></panel-component></li>
-      <li><panel-component panelName="desert"></panel-component></li>
-      <li><panel-component panelName="mountains"></panel-component></li>
+      <li v-for="name in panelsName.slice(12, 16)">
+        <panel-component :panelName=name></panel-component>
+      </li>
     </ul>
     <ul>
-      <li><panel-component panelName="forest"></panel-component></li>
-      <li><panel-component panelName="hill"></panel-component></li>
-      <li><panel-component panelName="desert"></panel-component></li>
+      <li v-for="name in panelsName.slice(16, 20)">
+        <panel-component :panelName=name></panel-component>
+      </li>
     </ul>
   </div>
 </template>
@@ -38,7 +34,17 @@
 
   Vue.component('panel-component', Panel);
 
-  export default {}
+  export default {
+    computed: {
+      panelsName() {
+        return this.$store.getters.panels
+      }
+    },
+    async created() {
+      await this.$store.dispatch("fetchPanels");
+      console.log(this.$store.getters.panels);
+    },
+  }
 </script>
 
 <style lang="css" scoped>
