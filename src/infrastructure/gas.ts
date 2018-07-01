@@ -35,10 +35,10 @@ export namespace Gas {
    * @param {string} sheetName
    * @param {number} x
    * @param {number} y
-   * @param {number} value
+   * @param {string} value
    * @returns {Promise<any>}
    */
-  export const writeCell = (sheetName: string, x: number, y: number, value: number) => {
+  export const writeCell = (sheetName: string, x: number, y: number, value: string) => {
     return new Promise((resolve, reject) => {
       google.script.run
         .withSuccessHandler(resolve)
