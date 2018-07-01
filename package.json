@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@google/clasp": "^1.4.0",
+    "@types/google-apps-script": "^0.0.24",
     "css-loader": "^0.28.11",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.4.2",
