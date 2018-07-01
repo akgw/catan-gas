@@ -98,3 +98,10 @@ export const roadsPosition = {
   72: { top:575, left:680, rotate:-60 },
   73: { top:575, left:810, rotate:-60 },
 };
+
+export const playerNumberToColor:{[key: number]: string} = {
+  1: 'red',
+  2: 'blue',
+  3: 'yellow',
+  4: 'white',
+};

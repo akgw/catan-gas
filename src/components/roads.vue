@@ -1,7 +1,7 @@
 <template>
   <div>
-    <span v-for="roadPosition in roadsPosition"  @click="changeColor">
-      <road-component :color=color
+    <span v-for="(roadPosition, key) in roadsPosition"  @click="changeColor">
+      <road-component :color=selectColor(roadsPositionStatus[key])
                       :top=roadPosition.top
                       :left=roadPosition.left
                       :rotate=roadPosition.rotate>
@@ -13,21 +13,29 @@
 <script lang="ts">
   import Vue from 'vue';
   import Road from './partials/road.vue';
-  import { roadsPosition } from '../config/constants';
+  import { roadsPosition, playerNumberToColor } from '../config/constants';
 
   Vue.component('road-component', Road);
 
   export default {
+    created() {
+      this.roadsPositionStatus[10] = 3;
+    },
+
     methods: {
       changeColor() {
         this.color = "red";
+      },
+      selectColor(playerNumber: number) {
+        return playerNumberToColor[playerNumber] || "";
       }
     },
+
     data: () => {
       return {
-        color: "yellow",
-//        colorList: new Array(71),
-        roadsPosition: roadsPosition
+        color: "",
+        roadsPosition: roadsPosition,
+        roadsPositionStatus: new Array(73),
       }
     }
   }
