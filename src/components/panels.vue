@@ -51,17 +51,20 @@
     position: relative;
   }
 
+  ul:nth-child(1) {
+    top: 30px;
+  }
   ul:nth-child(2) {
-    top: -40px;
+    top: -10px;
   }
   ul:nth-child(3) {
-    top: -80px;
+    top: -50px;
   }
   ul:nth-child(4) {
-    top: -120px;
+    top: -90px;
   }
   ul:nth-child(5) {
-    top: -160px;
+    top: -130px;
   }
 
   li {
