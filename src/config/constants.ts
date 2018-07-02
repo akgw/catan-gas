@@ -113,3 +113,43 @@ export const panelNumList: {[key: string]: number} = {
   mountains: 3,
   pasture: 4,
 };
+
+export const tipsPositionIdToPosition = {
+  1: { top: '95', left: '570' },
+  2: { top: '95', left: '700' },
+  3: { top: '95', left: '830' },
+
+  4: { top: '205', left: '510' },
+  5: { top: '205', left: '635' },
+  6: { top: '205', left: '765' },
+  7: { top: '205', left: '895' },
+
+  8: { top: '320', left: '445' },
+  9: { top: '320', left: '575' },
+  10: { top: '320', left: '705' },
+  11: { top: '320', left: '830' },
+  12: { top: '320', left: '960' },
+
+  13: { top: '425', left: '510' },
+  14: { top: '425', left: '635' },
+  15: { top: '425', left: '765' },
+  16: { top: '425', left: '895' },
+
+  17: { top: '540', left: '570' },
+  18: { top: '540', left: '700' },
+  19: { top: '540', left: '830' },
+};
+
+export const tipStars = {
+  2: '★',
+  3: '★★',
+  4: '★★★',
+  5: '★★★★',
+  6: '★★★★★',
+  7: '',
+  8: '★★★★★',
+  9: '★★★★',
+  10: '★★★',
+  11: '★★',
+  12: '★',
+};

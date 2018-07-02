@@ -3,6 +3,7 @@ import { IRoadsState, ICell } from './modules/roads';
 import { IPanelsState } from './modules/panels';
 import { Roads } from '../domain/roads';
 import IGenerateResponse = Roads.IGenerateResponse;
+import { ITipsState } from './modules/tips';
 
 export const roadsMutations: MutationTree<IRoadsState> = {
 
@@ -19,4 +20,8 @@ export const panelsMutations: MutationTree<IPanelsState> = {
   setPanels(state: IPanelsState, panels: ICell): void {
     state.panels = panels;
   },
+};
+
+export const tipsMutations: MutationTree<ITipsState> = {
+
 };
