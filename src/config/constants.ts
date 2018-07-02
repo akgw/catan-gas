@@ -106,7 +106,7 @@ export const playerNumberToColor:{[key: number]: string} = {
   4: 'white',
 };
 
-export const panelNumList = {
+export const panelNumList: {[key: string]: number} = {
   forest: 4,
   field: 4,
   hill: 3,

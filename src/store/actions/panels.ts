@@ -16,11 +16,17 @@ export const panelsActions: ActionTree<IRoadsState, IRoadsState> = {
     });
   },
 
-  // updatePanels({ commit }: ActionContext<IRoadsState, IRoadsState>, payload) {
-  //   // Roads.generate(payload.position, payload.playerNumber).then((value: IGenerateResponse) => {
-  //   //   commit('setRoad', value);
-  //   // }).catch((error) => {
-  //   //   console.log(error);
-  //   // });
-  // },
+  /**
+   * パネル情報の初期化
+   *
+   * @param {Commit} commit
+   * @param payload
+   */
+  refreshPanels({ commit }: ActionContext<IRoadsState, IRoadsState>, payload) {
+    Panels.refresh().then((value) => {
+      commit('setPanels', value);
+    }).catch((error) => {
+      console.log(error);
+    });
+  },
 };

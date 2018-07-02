@@ -47,12 +47,24 @@ export namespace Gas {
     });
   };
 
-  export const writeRangeCell = (sheetName: string, fromX: number, toX: number, values: string[]) => {
+  /**
+   * 指定セルに複数データを書き込み
+   *
+   * @param {string} sheetName
+   * @param {number} fromX
+   * @param {number} toX
+   * @param {number} fromY
+   * @param {number} toY
+   * @param {string[]} values
+   * @returns {Promise<any>}
+   */
+  export const writeRangeCell = (
+    sheetName: string, fromX: number, toX: number, fromY: number, toY: number, values: string[]) => {
     return new Promise((resolve, reject) => {
       google.script.run
         .withSuccessHandler(resolve)
         .withFailureHandler(reject)
-        .sendWriteRangeCell(sheetName, values, convertX(fromX), convertX(toX));
+        .sendWriteRangeCell(sheetName, [values], convertX(fromX), convertX(toX), convertY(fromY), convertY(toY));
     });
   };
 

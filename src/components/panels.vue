@@ -25,6 +25,8 @@
         <panel-component :panelName=name></panel-component>
       </li>
     </ul>
+
+    <button @click="refreshPanels">りふれっしゅ</button>
   </div>
 </template>
 
@@ -42,8 +44,12 @@
     },
     async created() {
       await this.$store.dispatch("fetchPanels");
-      console.log(this.$store.getters.panels);
     },
+    methods: {
+      async refreshPanels() {
+        await this.$store.dispatch("refreshPanels");
+      }
+    }
   }
 </script>
 

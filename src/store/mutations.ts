@@ -16,10 +16,7 @@ export const roadsMutations: MutationTree<IRoadsState> = {
 };
 
 export const panelsMutations: MutationTree<IPanelsState> = {
-
   setPanels(state: IPanelsState, panels: ICell): void {
-    console.log('sets', panels);
     state.panels = panels;
   },
-
 };

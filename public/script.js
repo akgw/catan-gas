@@ -52,15 +52,14 @@ function sendWriteCell(sheetName, x, y, value) {
  * @param array
  * @param minX
  * @param maxX
+ * @param fromY
+ * @param toY
  */
-function sendWriteRangeCell(sheetName, array, minX, maxX) {
+function sendWriteRangeCell(sheetName, array, minX, maxX, fromY, toY) {
   const sheet = SpreadsheetApp.getActive().getSheetByName(sheetName);
 
-  for (var y in array) {
-    var range = sheet.getRange(minX + y + ":" + maxX + y);
-
-    range.setValues([array[y]]);
-  }
+  var range = sheet.getRange(minX + fromY + ":" + maxX + toY);
+  range.setValues(array);
 }
 
 /**

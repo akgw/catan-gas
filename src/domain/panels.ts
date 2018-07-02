@@ -20,27 +20,27 @@ export namespace Panels {
   /**
    * パネルを設置する
    *
-   * @param {number} position
-   * @param {number} playerNumber
    * @returns {Promise<any>}
    */
-  export const set = async (): Promise<any> => {
-  //
-  //   const panels = [];
-  //
-  //
-  //   await Gas.writeRangeCell(sheetName, panels, 0, maxPanelNum());
-  //   return Promise.resolve({
-  //     position,
-  //     playerNumber,
-  //   });
-  // };
-  //
-  // const shufflePanels = () => {
-  //
-  //
-  //
-  //
+  export const refresh = async (): Promise<any> => {
+    const panels = shufflePanels();
+    await Gas.writeRangeCell(sheetName, 0, maxPanelNum(), 1, 1, panels);
+    return Promise.resolve(panels);
+  };
+
+  const shufflePanels = () => {
+    let array: string[] = [];
+    Object.keys(panelNumList).forEach((key: string) => {
+      const val = panelNumList[key];
+      array = array.concat(Array(Number(val)).fill(key));
+    });
+
+    array = array.concat(['desert']);
+    array.sort((): any => {
+      return Math.random() - .5;
+    });
+
+    return array;
   };
 
   const maxPanelNum = () => {
