@@ -9,12 +9,19 @@ export namespace Panels {
   const sheetName = 'board';
 
   /**
+   * シートの格納先列
+   *
+   * @type {number}
+   */
+  const storeY = 1;
+
+  /**
    * パネル情報を取得する
    *
    * @returns {Promise<any>}
    */
   export const readAll = async () => {
-    return await Gas.readRangeCell(sheetName, 0, 1, maxPanelNum(), 1);
+    return await Gas.readRangeCell(sheetName, 0, storeY, maxPanelNum(), storeY);
   };
 
   /**
@@ -24,7 +31,7 @@ export namespace Panels {
    */
   export const refresh = async (): Promise<any> => {
     const panels = shufflePanels();
-    await Gas.writeRangeCell(sheetName, 0, maxPanelNum(), 1, 1, panels);
+    await Gas.writeRangeCell(sheetName, 0, maxPanelNum(), storeY, storeY, panels);
     return Promise.resolve(panels);
   };
 

@@ -8,12 +8,19 @@ export namespace Roads {
   const sheetName = 'board';
 
   /**
+   * シートの格納先列
+   *
+   * @type {number}
+   */
+  const storeY = 0;
+
+  /**
    * 街道情報を取得する
    *
    * @returns {Promise<any>}
    */
   export const readAll = async () => {
-    return await Gas.readRangeCell(sheetName, 0, 0, 73, 0);
+    return await Gas.readRangeCell(sheetName, 0, storeY, 73, storeY);
   };
 
   /**
@@ -24,7 +31,7 @@ export namespace Roads {
    * @returns {Promise<any>}
    */
   export const generate = async (position: number, playerNumber: number): Promise<IGenerateResponse> => {
-    await Gas.writeCell(sheetName, position, 0, playerNumber.toString());
+    await Gas.writeCell(sheetName, position, storeY, playerNumber.toString());
     return Promise.resolve({
       position,
       playerNumber,
