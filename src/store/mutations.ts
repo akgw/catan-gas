@@ -23,5 +23,7 @@ export const panelsMutations: MutationTree<IPanelsState> = {
 };
 
 export const tipsMutations: MutationTree<ITipsState> = {
-
+  setTips(state: ITipsState, tips: {[key:number]: number}): void {
+    state.tips = tips;
+  },
 };

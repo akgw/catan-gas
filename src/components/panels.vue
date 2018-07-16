@@ -44,6 +44,7 @@
     },
     async created() {
       await this.$store.dispatch("fetchPanels");
+      await this.$store.dispatch("syncTipsPosition", this.$store.getters.panels);
     },
     methods: {
       async refreshPanels() {

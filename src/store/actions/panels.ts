@@ -8,8 +8,8 @@ export const panelsActions: ActionTree<IRoadsState, IRoadsState> = {
    *
    * @param {Commit} commit
    */
-  fetchPanels({ commit }: ActionContext<IRoadsState, IRoadsState>) {
-    Panels.readAll().then((value: {[key: number]: any}) => {
+  async fetchPanels({ commit }: ActionContext<IRoadsState, IRoadsState>) {
+    await Panels.readAll().then((value: {[key: number]: any}) => {
       commit('setPanels', value[0]);
     }).catch((error) => {
       console.log(error);
