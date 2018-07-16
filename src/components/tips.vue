@@ -21,8 +21,6 @@
   export default {
     computed: {
       tipsPosition() {
-        console.log('tips',this.$store.getters.tips);
-        console.log('const:',this.tipsPositionIdToPosition);
         return this.$store.getters.tips;
       }
     },
