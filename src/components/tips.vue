@@ -1,10 +1,11 @@
 <template>
   <div>
-    <span v-for="(positionId, number) in tipsPosition">
-      <tip-component :number=number
+    <span v-for="(number, positionId) in tipsPosition">
+      <tip-component v-if="tipsPositionIdToPosition[positionId+1] !== undefined"
+                     :number=number
                      :stars=tipsStars[number]
-                     :top=tipsPositionIdToPosition[positionId].top
-                     :left=tipsPositionIdToPosition[positionId].left>
+                     :top=tipsPositionIdToPosition[positionId+1].top
+                     :left=tipsPositionIdToPosition[positionId+1].left>
       </tip-component>
     </span>
   </div>
@@ -18,17 +19,13 @@
   Vue.component('tip-component', Tip);
 
   export default {
-    created() {
-      // todo データをvuexから取得してくる
-      this.tipsPosition = {
-        2: 1,
-        3: 10
+    computed: {
+      tipsPosition() {
+        return this.$store.getters.tips;
       }
     },
-
     data :() => {
       return {
-        tipsPosition: [],
         tipsPositionIdToPosition: tipsPositionIdToPosition,
         tipsStars: tipStars
       }

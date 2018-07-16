@@ -153,3 +153,5 @@ export const tipStars = {
   11: '★★',
   12: '★',
 };
+
+export const tipsNumberOrder = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11];
