@@ -4,7 +4,7 @@ import { IPanelsState } from './modules/panels';
 import { Roads } from '../domain/roads';
 import IGenerateResponse = Roads.IGenerateResponse;
 import { ITipsState } from './modules/tips';
-import {ILandsState} from "./modules/lands";
+import { ILandsState } from './modules/lands';
 
 export const roadsMutations: MutationTree<IRoadsState> = {
 

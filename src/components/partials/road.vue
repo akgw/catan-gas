@@ -14,7 +14,7 @@
     ],
     computed: {
       style() {
-        return 'width: 10px; height: 80px; position: absolute; '
+        return 'width: 5px; height: 80px; position: absolute; '
           + 'background: ' + this.color + '; '
           + 'top: ' + this.top + 'px; '
           + 'left: ' + this.left + 'px; '

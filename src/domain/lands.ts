@@ -47,5 +47,5 @@ export namespace Lands {
 
   const toCell = (playerNumber: number, land: number) => {
     return playerNumber + '_' + land;
-  }
+  };
 }

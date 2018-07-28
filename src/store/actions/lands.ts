@@ -10,7 +10,7 @@ export const landsActions: ActionTree<ILandsState, ILandsState> = {
    */
   fetchLands({ commit }: ActionContext<ILandsState, ILandsState>) {
     Lands.readAll().then((value: {[key: number]: any}) => {
-      let lands: {[key: string]: string}[] = [];
+      const lands: {[key: string]: string}[] = [];
       Object.keys(value[0]).forEach((key: string) => {
         const str = value[0][key].split('_');
 
@@ -20,13 +20,10 @@ export const landsActions: ActionTree<ILandsState, ILandsState> = {
         };
       });
 
-      console.log(lands);
-
       commit('setLands', lands);
     }).catch((error) => {
       console.log(error);
     });
-
 
   },
 };

@@ -157,7 +157,69 @@ export const tipStars = {
 export const tipsNumberOrder = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11];
 
 export const landsPosition = {
-  0: { top:350, left:420},
-  1: { top:350, left:420},
-  2: { top:350, left:420}
+  0:  { top:30, left:570 },
+  1:  { top:30, left:700 },
+  2:  { top:30, left:830 },
+
+  3:  { top:55, left:510 },
+  4:  { top:55, left:635 },
+  5:  { top:55, left:770 },
+  6:  { top:55, left:895 },
+
+  7:  { top:135, left:510 },
+  8:  { top:135, left:640 },
+  9:  { top:135, left:765 },
+  10: { top:135, left:890 },
+
+  11: { top:165, left:450 },
+  12: { top:165, left:570 },
+  13: { top:165, left:700 },
+  14: { top:165, left:830 },
+  15: { top:165, left:955 },
+
+  16: { top:250, left:450 },
+  17: { top:250, left:570 },
+  18: { top:250, left:700 },
+  19: { top:250, left:830 },
+  20: { top:250, left:955 },
+
+  21: { top:280, left:385 },
+  22: { top:280, left:510 },
+  23: { top:280, left:640 },
+  24: { top:280, left:765 },
+  25: { top:280, left:890 },
+  26: { top:280, left:1025 },
+
+  27: { top:360, left:385 },
+  28: { top:360, left:510 },
+  29: { top:360, left:640 },
+  30: { top:360, left:765 },
+  31: { top:360, left:890 },
+  32: { top:360, left:1025 },
+
+  33: { top:390, left:450 },
+  34: { top:390, left:570 },
+  35: { top:390, left:700 },
+  36: { top:390, left:830 },
+  37: { top:390, left:955 },
+
+  38: { top:475, left:450 },
+  39: { top:475, left:570 },
+  40: { top:475, left:700 },
+  41: { top:475, left:830 },
+  42: { top:475, left:955 },
+
+  43: { top:500, left:510 },
+  44: { top:500, left:640 },
+  45: { top:500, left:765 },
+  46: { top:500, left:890 },
+
+  47: { top:580, left:510 },
+  48: { top:580, left:640 },
+  49: { top:580, left:765 },
+  50: { top:580, left:890 },
+
+  51: { top:610, left:570 },
+  52: { top:610, left:700 },
+  53: { top:610, left:830 },
 };

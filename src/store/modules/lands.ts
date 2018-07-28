@@ -14,7 +14,7 @@ const getters: GetterTree<ILandsState, ILandsState> = {
     if (state.lands[id] === undefined) {
       return {
         player: '',
-        land: ''
+        land: '',
       };
     }
 
@@ -23,8 +23,8 @@ const getters: GetterTree<ILandsState, ILandsState> = {
 };
 
 interface IValue {
-  player: string,
-  land: string
+  player: string;
+  land: string;
 }
 /**
  * vuex state(interface)
